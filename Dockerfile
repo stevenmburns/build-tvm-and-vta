@@ -14,7 +14,5 @@ RUN git clone https://github.com/pasqoc/incubator-tvm.git && \
 RUN cd incubator-tvm/ && \
     git submodule update --init --recursive
 
-RUN apt-get update && apt-get install -yq llvm-9-dev && apt-get clean
-
 RUN cd incubator-tvm/ && \
     /bin/bash -c "source $venv/bin/activate && make -j `nproc` && make chisel"
